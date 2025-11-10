@@ -16,10 +16,10 @@ const port = process.env.PORT || 5000;
 // Enable CORS for all routes - allows your frontend on a different port/domain to make requests
 // IMPORTANT: In production, consider restricting this to your specific frontend domain.
 app.use(cors({
-    origin: 'https://anushkaaaa21.github.io', // Allow only your GitHub Pages frontend
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods if needed
-    credentials: true // If you're sending cookies or authorization headers
+    origin: ['http://localhost:3000', 'http://localhost:3001', ' https://anushkaaaa21.github.io/waves-of-change/'],// Allow only your frontend's origin during development
+    credentials: true, // Allow sending cookies/auth headers
 }));
+
 // Enable Express to parse JSON formatted request bodies
 // This is crucial for receiving data like firstName, email, password from your frontend
 app.use(express.json());
